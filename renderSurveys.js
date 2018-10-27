@@ -1,10 +1,21 @@
 
 function renderSurveys(surveys) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(surveys)}</code>
-        </div>
-    `
+    var html = `<div class="text-center mt-5">`;
+    surveys.forEach(survey => {
+        html += `
+            <div style="width: 500px; margin: 0 auto; text-align: left;">
+                <h1 style="margin-bottom: 0; padding: 0; line-height: 0.5;">${survey.title}</h1>
+                <hr />
+        `
+        survey.fields.forEach(question => {
+            html += `
+                    <p>Did you go to the movies last month</p>
+            `
+        })
+        html += `</div>`
+    });
+    html += `</div>`
+    return html;
 }
 
 function surveys() {

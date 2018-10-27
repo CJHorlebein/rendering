@@ -1,11 +1,48 @@
 
 function renderAlbums(albums) {
-    var her = "Hey"
-    return `
-        <div class="text-center mt-5">
-            <h1>${albums[0].artist}</h1>
-        </div>
-    `
+    var html = `<div class="text-center mt-5" style="width: 800px; margin: 0 auto;">`
+    albums.forEach(label => { 
+        html += `
+                <h1>${albums[0].artist}</h1>
+                <hr />
+                `
+        label.albums.forEach(album => {
+            html += `
+                <div style="margin-bottom: 5px; text-align: left;">
+                    <div style="display: flex; align-items: flex-end; margin-bottom:5px;">
+                        <div style="display: inline-block;">
+                            <img style="height: 75px;" src="${album.albumCover}" />
+                        </div>
+                        <div style="display: inline-block; margin-left: 20px;">
+                            <h3 style="">${album.title}</h3>
+                        </div>
+                        <hr />
+                    </div>
+                    <div style="margin-bottom: 50px;">
+                `
+            album.songs.forEach(song => {
+                html += `
+                        <hr />
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="display: inline-block;">
+                                <img style="height: 20px; padding-bottom: 2px;" src="arrow.png" />
+                                ${song.title}
+                            </div>
+                            <div style="display: inline-block;">
+                                ${song.length}
+                            </div>
+                        </div>
+                    `
+            });
+            html += `
+                    <hr />
+                    </div>
+                </div>
+                `
+        });
+    });
+    html += `</div>`
+    return html;
 }
 
 function albums() {

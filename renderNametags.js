@@ -1,8 +1,8 @@
 
 function renderNametags(nametags) {
-    var array = `<div class="text-center mt-5">`;
+    var html = `<div class="text-center mt-5">`;
     nametags.forEach(element => {
-        array += `
+        html += `
             <div style="margin: 0 auto; width: 200px; margin-bottom: 5px;">
                 <div style="background-color: blue; border: 1px solid grey; padding: 5px 0;">
                     <span style="color: white; font-size: 18px; font-weight: bold;">Hello, my name is:</span>
@@ -13,8 +13,8 @@ function renderNametags(nametags) {
             </div>
             `
     });
-        array+= `</div>`
-    return array;
+    html+= `</div>`
+    return html;
 
 }
 
