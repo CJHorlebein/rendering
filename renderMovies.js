@@ -1,10 +1,20 @@
 
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
-        </div>
-    `
+    var html = `<div class="text-center mt-5">`
+
+    movies.forEach(card => {
+        html += `
+        <div style="background-color:#B7B7B7; margin: 0 auto; width: 350px; padding: 20px; border-radius: 2%;">
+            <img style="display: block; width: 130px; height: 200px; margin-right: 5px;" src="${card.poster}" />
+            <div style="background-color: #DCDCDC; height: 200px; width: 120px;">
+                Hello
+            </div>
+        </div>       <br/><br/><br/>
+        `
+    });
+
+    html += `</div>`
+    return html;
 }
 
 function movies() {

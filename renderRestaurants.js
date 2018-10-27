@@ -1,12 +1,23 @@
 
 function renderRestaurants(restaurants) {
-    // HINT: You can use <img /> tags that point to these playing card images: 
-    // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(restaurants)}</code>
-        </div>
-    `
+    var html = `<div class="text-center mt-5">`
+    restaurants.forEach(food => {
+        var rate = "";
+        for (var i = 0; i < food.priceRating; i++) {
+            rate += "$";
+        }
+
+        html += `
+        <div style="display: inline-block; background-color: #DFDFDF; border-radius: 5%; height: 100px; width: 150px; text-align: left; padding: 0px 5px;">
+            <div style="font-size: 24px; font-weight: bold; line-height: 1.4;">${food.name}</div>
+            <div style="color: #636363; font-weight: bold; font-size: 12px; line-height: 1;">${food.type}</div>
+            <div style="color:#19C209; font-weight: bold; font-size: 24px; line-height: 1.2;">${rate}</div>
+        </div>      
+        `
+    });
+
+    html += `</div>`
+    return html;
 }
 
 function restaurants() {
