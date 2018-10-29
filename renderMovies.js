@@ -4,12 +4,17 @@ function renderMovies(movies) {
 
     movies.forEach(card => {
         html += `
-        <div style="background-color:#B7B7B7; margin: 0 auto; width: 350px; padding: 20px; border-radius: 2%;">
-            <img style="display: block; width: 130px; height: 200px; margin-right: 5px;" src="${card.poster}" />
-            <div style="background-color: #DCDCDC; height: 200px; width: 120px;">
-                Hello
+        <div style="display: flex; background-color:#B7B7B7; margin: 0 auto 10px; width: 490px; padding: 20px; border-radius: 2%; justify-content: space-between;">
+            <img style="display: block; height: 250px; width: 180px;" src="${card.poster}" />
+            <div style="display: block; height: 250px; width: 250px; background-color: #DCDCDC; border-radius: 10px; text-align: left; padding: 10px;">
+                <h3 style="margin: 0;">${card.title}</h3>
+                <span style="font-weight: bold;">${card.year}</span>
+                <h3 style="margin: 10px 0 0; font-size: 24px;">IMDB:</h3>
+                <span style="font-size: 24px;">${card.imdbRating} / 10</span>
+                <h2 style="margin: 10px 0 0; font-size: 24px;">Rotten Tomatoes:</h2>
+                <span style="font-size: 24px;">${card.rottenTomatoesRating * 100}%</span>
             </div>
-        </div>       <br/><br/><br/>
+        </div>
         `
     });
 
